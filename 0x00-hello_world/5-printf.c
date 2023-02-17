@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - prints a string with the printf function
  *
  * Return: 0 always on success
