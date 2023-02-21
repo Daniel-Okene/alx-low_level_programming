@@ -11,7 +11,7 @@ int _islower(int c)
 {
 	int i = 97;
 
-	while(i < 123)
+	while (i < 123)
 	{
 		if (c == i++)
 			return (1);
