@@ -12,9 +12,9 @@
 
 int main(void)
 {
-	int i = 1;
+	int i;
 
-	while (i <= 100)
+	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 			printf(" FizzBuzz");
@@ -26,7 +26,6 @@ int main(void)
 			printf("%d", i);
 		else
 			printf(" %d", i);
-		i++;
 	}
 	printf("\n");
 	return (0);
