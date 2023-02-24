@@ -12,18 +12,19 @@
 
 int main(void)
 {
-	int i;
+	int i = 1;
 
-	for (i = 1; i <= 100; i++)
+	while (i <= 100)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 			printf("FizzBuzz ");
 		else if (i % 3 == 0)
 			printf("FIzz ");
 		else if (i % 5 == 0)
-			printf("BUzz ");
+			printf("Buzz ");
 		else
 			printf("%d ", i);
+		i++;
 	}
 	_putchar('\n');
 	return (0);
