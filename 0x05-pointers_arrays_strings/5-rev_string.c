@@ -16,7 +16,7 @@ void rev_string(char *s)
 		count++;
 
 	new_count = count - 1;
-	for ( i = 0; i <= count/2; i++)
+	for (i = 0; i <= count / 2; i++)
 	{
 		new_s = s[i];
 		s[i] = s[new_count];
