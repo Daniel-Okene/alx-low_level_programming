@@ -20,15 +20,17 @@ char *cap_string(char *s)
 		{
 			if (i == 0 && s[i] > 96 && s[i] < 123)
 				s[i] -= 32;
-			if (s[i++] == spe[k++])
+			if (s[i] == spe[k])
 			{
-				if (s[i] > 96 && s[i] < 123)
+				if (s[i + 1] > 96 && s[i + 1] < 123)
 				{
-					s[i] -= 32;
+					s[i + 1] -= 32;
 					break;
 				}
+				k++;
 			}
 		}
+		i++;
 	}
 	return (s);
 }
