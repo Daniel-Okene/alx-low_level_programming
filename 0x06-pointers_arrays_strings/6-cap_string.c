@@ -18,7 +18,7 @@ char *cap_string(char *s)
 	{
 		while (spe[k])
 		{
-			if (i == 0; && s[i] > 96 && s[i] < 123)
+			if (i == 0 && s[i] > 96 && s[i] < 123)
 				s[i] -= 32;
 			if (s[i++] == spe[k++])
 			{
