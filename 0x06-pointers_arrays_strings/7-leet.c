@@ -12,7 +12,7 @@ char *leet(char *s)
 	int i = 0;
 	int j = 0;
 	char letters[6] = {'a', 'e', 'o', 't', 'l'};
-	char  values[6] = {'4', '3', '0', '7', '1'};
+	char values[6] = {'4', '3', '0', '7', '1'};
 
 	while (s[i])
 	{
