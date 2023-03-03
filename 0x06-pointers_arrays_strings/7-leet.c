@@ -12,7 +12,7 @@ char *leet(char *s)
 	int i = 0;
 	int j = 0;
 	char letters[6] = {'a', 'e', 'o', 't', 'l'};
-	int values[6] = {4, 3, 0, 7, 1};
+	char  values[6] = {'4', '3', '0', '7', '1'};
 
 	while (s[i])
 	{
@@ -20,9 +20,10 @@ char *leet(char *s)
 		{
 			if (s[i] == letters[j] || s[i] == letters[j] - 32)
 			{
-				s[i++] = values[j] + 48;
+				s[i++] = values[j];
 				break;
 			}
+			j++;
 		}
 	}
 	return (s);
