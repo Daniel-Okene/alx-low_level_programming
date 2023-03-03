@@ -10,24 +10,12 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
-	int value;
-
-	while (s1[1] && s2[1])
+	while (*s1 == *s2)
 	{
-		if (s1[i] > s2[i])
-		{
-			value = 15;
-			break;
-		}
-		else if (s1[i] < s2[i])
-		{
-			value = -15;
-			break;
-		}
-		else
-			value = 0;
-		i++;
+		if (*s1 == "\0")
+			return(0);
+		s1++;
+		s2++;
 	}
-	return (value);
+	return (*s1 - *s2);
 }
