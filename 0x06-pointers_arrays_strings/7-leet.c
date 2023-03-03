@@ -16,6 +16,7 @@ char *leet(char *s)
 
 	while (s[i])
 	{
+		j = 0;
 		while (letters[j])
 		{
 			if (s[i] == letters[j] || s[i] == letters[j] - 32)
