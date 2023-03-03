@@ -23,4 +23,4 @@ int _strcmp(char *s1, char *s2)
 	else if (count > i)
 		return (15);
 	return (0);
-
+}
