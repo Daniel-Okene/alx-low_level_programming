@@ -20,11 +20,12 @@ char *leet(char *s)
 		{
 			if (s[i] == letters[j] || s[i] == letters[j] - 32)
 			{
-				s[i++] = values[j];
+				s[i] = values[j];
 				break;
 			}
 			j++;
 		}
+		i++;
 	}
 	return (s);
 }
