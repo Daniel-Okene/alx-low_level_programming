@@ -10,17 +10,17 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, count = 0;
+	int count1 = 0;
+	int count2 = 0;
 
-	for (i = 0; s1[i]; i++)
-	{
-		if (s1[i] == s2[i])
-			count++;
-	}
+	while (s1[count1])
+		count1++;
+	while (s2[count2])
+		count2++;
 
-	if (count < i)
+	if (count1 < count2)
 		return (-15);
-	else if (count > i)
+	else if (count1 > count2)
 		return (15);
 	return (0);
 }
