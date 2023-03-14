@@ -14,14 +14,22 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, size1 = 0, size2 = 0;
 	char *newptr;
 
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	for (i = 0; s1[i]; i++)
-		size1++;
-	for (i = 0; s2[i]; i++)
-		size2++;
+	if (s1 == NULL)
+		size1 = 0;
+	else
+	{
+		for (i = 0; s1[i]; i++)
+			size1++;
+	}
+	if (size2 == NULL)
+		size2 = 0;
+	else
+	{
+		for (i = 0; s2[i]; i++)
+			size2++;
+	}
 
-	newptr = malloc(sizeof(char) * (size1 + size2 + 1));
+	newptr = malloc(sizeof(char) * (size1 + size2));
 	if (newptr == NULL)
 		return (NULL);
 	for (i = 0; i < (size1 + size2); i++)
