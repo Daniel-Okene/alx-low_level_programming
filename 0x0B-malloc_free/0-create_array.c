@@ -11,9 +11,11 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *rbuffer = malloc(size * sizeof(char));
 	unsigned int i;
+	char *rbuffer = malloc(size * sizeof(char));
 
+	if (rbuffer == NULL)
+		return (NULL);
 	for (i = 0; i < size; i++)
 		rbuffer[i] = c;
 	return (rbuffer);
