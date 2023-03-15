@@ -26,12 +26,19 @@ char *str_concat(char *s1, char *s2)
 	if (s1)
 	{
 		while(i < size1)
-			newptr[i] = s1[i++];
+		{
+			newptr[i] = s1[i];
+			i++;
+		}
 	}
 	if (s2)
 	{
 		while (i < (size1 + size2))
-			newptr[i++] = s2[j++];
+		{
+			newptr[i] = s2[j];
+			i++;
+			j++;
+		}
 	}
 	newptr[i] = '\0';
 
