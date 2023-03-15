@@ -25,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1)
 	{
-		while(i < size1)
+		while (i < size1)
 		{
 			newptr[i] = s1[i];
 			i++;
