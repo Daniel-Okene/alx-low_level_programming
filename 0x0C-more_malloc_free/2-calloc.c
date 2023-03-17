@@ -36,7 +36,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (!newptr)
 		return (NULL);
 
-	newptr = _memset(newptr, size);
+	_memset(newptr, (nmemb * size));
 
 	return (newptr);
 }
