@@ -7,7 +7,7 @@
  * @age: dog age
  * @owner: dog owner
  *
- * Description: void
+ * Description: Longer description
  */
 struct dog {
 	char *name;
