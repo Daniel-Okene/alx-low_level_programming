@@ -17,22 +17,22 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		if (!separator)
 		{
-			if (va_arg(ap, int))
-				printf("%s", va_arg(nap, int));
+			if (va_arg(ap, char *))
+				printf("%s", va_arg(nap, char *));
 			else
 				printf("(nil)");
 		}
 		else if (separator && i == n - 1)
 		{
-			if (va_arg(ap, int))
-				printf("%s", va_arg(nap, int));
+			if (va_arg(ap, char *))
+				printf("%s", va_arg(nap, char *));
 			else
 				printf("(nil)");
 		}
 		else
 		{
-			if (va_arg(ap, int))
-				printf("%s%s", va_arg(ap, int), separator);
+			if (va_arg(ap, char *))
+				printf("%s%s", va_arg(ap,char *), separator);
 			else
 				printf("(nil)%s", separator);
 		}
