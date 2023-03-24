@@ -8,39 +8,26 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	va_list ap;
-	va_list nap;
+	char *str;
 
-	va_start(ap, n);
-	va_start(nap, n);
+	va_list list;
+
+	va_start(list, n);
 
 	for (i = 0; i < n; i++)
 	{
+		str = va_arg(list, char *);
+		if (!str)
+			str = "(nil)";
 		if (!separator)
-		{
-			if (va_arg(ap, char *))
-				printf("%s", va_arg(nap, char *));
-			else
-				printf("(nil)");
-		}
-		else if (separator && i == n - 1)
-		{
-			if (va_arg(ap, char *))
-				printf("%s", va_arg(nap, char *));
-			else
-				printf("(nil)");
-		}
+			printf("%s", str);
+		else if (separator && i == 0)
+			printf("%s", str);
 		else
-		{
-			if (va_arg(ap, char *))
-				printf("%s%s", va_arg(ap,char *), separator);
-			else
-				printf("(nil)%s", separator);
-		}
+			printf("%s%s", separator, str);
 	}
 
-	va_end(ap);
-	va_end(nap);
 	printf("\n");
-}
 
+	va_end(list);
+}
