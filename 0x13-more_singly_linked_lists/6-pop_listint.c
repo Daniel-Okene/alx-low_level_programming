@@ -10,8 +10,6 @@ int pop_listint(listint_t **head)
 {
 	int copy;
 
-	if (!head)
-		return (NULL);
 	if (!*head)
 		return (0);
 
