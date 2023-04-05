@@ -9,12 +9,15 @@
 int pop_listint(listint_t **head)
 {
 	int copy;
+	listint_t *temp = *head;
 
-	if (!*head)
+	if (!head || !*head)
 		return (0);
 
-	copy = (*head)->n;
+	copy = temp->n;
+	temp = (*head)->next;
 	free(*head);
+	*head = temp;
 
 	return (copy);
 }
