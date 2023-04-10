@@ -22,12 +22,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buf = malloc(sizeof(char) * letters);
 	if (!buf)
+	{
+		close(fd);
 		return (0);
+	}
 
 	rfd = read(fd, buf, letters);
-	if (!rfd)
+	if (rfd < 0)
 	{
 		free(buf);
+		close(fd);
 		return (0);
 	}
 	buf[rfd] = '\0';
@@ -35,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	close(fd);
 
 	count = write(1, buf,  rfd);
-	if (!count)
+	if (rfd != count)
 	{
 		free(buf);
 		return (0);
