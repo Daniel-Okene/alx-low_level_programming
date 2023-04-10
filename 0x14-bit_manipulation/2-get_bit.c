@@ -4,7 +4,7 @@
  * get_bit - returns the value of a bit at a given index
  * @n: number to convert to binary
  * @index: index to find
- * 
+ *
  * Return: value of index searched
  */
 int get_bit(unsigned long int n, unsigned int index)
