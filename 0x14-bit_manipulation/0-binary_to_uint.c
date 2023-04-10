@@ -8,45 +8,17 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int count = 0, sum = 0, number, value;
+	int count;
+	unsigned int sum = 0;
 
 	if (!b)
 		return (0);
-	while (b[count])
+	for (count = 0; b[i]; count++)
 	{
-		if (b[count] != '1' && b[count] != '0')
+		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		count++;
+		sum = 2 * sum + (b[i] - '0');
 	}
-	number = atoi(b);
-	count = 0;
 
-	while (number > 0)
-	{
-		value = number % 10;
-		if (value == 0)
-		{
-			number /= 10;
-			count++;
-			continue;
-		}
-		sum += (value * binary_to_decimal(count++));
-		number /= 10;
-	}
 	return (sum);
-}
-
-/**
- * binary_to_decimal - returns the
- * @i: number of times to multiply
- *
- * Return: the value of the multiplication
- */
-int binary_to_decimal(int i)
-{
-	if (i == 0)
-		return (1);
-	if (i == 1)
-		return (2);
-	return (2 * binary_to_decimal(i - 1));
 }
