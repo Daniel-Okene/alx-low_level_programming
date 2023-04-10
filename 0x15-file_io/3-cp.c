@@ -42,15 +42,8 @@ int main(int argc, char **argv)
 		return (97);
 	}
 
-	rfd = read(fd1, buf, 1024);
-	if (rfd < 0)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		return (98);
-	}
-
 	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], 0_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
 	error_code(file_from, file_to, argv);
 
 	nchars = 1024;
@@ -67,14 +60,14 @@ int main(int argc, char **argv)
 	err_close = close(file_from);
 	if (err_close == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd1);
+		dprintf(2, "Error: Can't close fd %d\n", file_from);
 		return (100);
 	}
 
-	err_close = close(file_to)
+	err_close = close(file_to);
 	if (err_close == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd2);
+		dprintf(2, "Error: Can't close fd %d\n", file_to);
 		return (100);
 	}
 	return (0);
