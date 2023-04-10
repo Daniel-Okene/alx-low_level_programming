@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 	err_close = close(file_to);
 	if (err_close == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", file_to);
+		dprintf(2, "Error: Can't close fd %d\n", file_from);
 		return (100);
 	}
 	return (0);
